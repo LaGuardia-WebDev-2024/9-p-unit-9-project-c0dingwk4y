@@ -2,29 +2,38 @@ setup = function() {
     size(400, 400);
 };
 
+
+
 var answer = 1;
 
 draw = function(){
-  background(100,100,100);
-  fill(0, 0, 0);
+  background(255, 182, 193);
+  fill();
   ellipse(200, 200, 375, 375);
-  fill(60, 0, 255);
-  triangle(200, 104, 280, 280, 120, 280);
+  fill(255, 182, 193);
+  triangle(200, 104, 280, 280, 120, 280); //The Answer itself
   fill(255, 255, 255);
-  if(mouseClicked && shape==1){
-    textsize(random(30));
-    text("🌸", mouseX, mouseY);
+  if(mousePressed && answer==1){
+    textSize(random(30));
+    text("🌸", mouseX, mouseY); // Pink Emoji
   }
   
   if (answer == 1) {
-    text("YOUR", 176, 200);
-    text("MESSAGE", 159, 229); 
+    text("SHAKE", 176, 200); // First Answer
+    text("AT", 189, 219); 
+    text("YOUR", 189, 239); 
+    text("WILL", 189, 259); 
   }
-  
+ if (answer == 2){
+   text("POSSIBLY SO", 160, 200); //Second Answer
+ } 
+ if (answer == 3) {
+  text("YOUR COOKED", 160, 220); // Third Answer
+ }
 };
 
 mouseClicked = function(){
-  answer = round(random(1, 5));
+  answer = round(random(1, 3));
 };
 
 
