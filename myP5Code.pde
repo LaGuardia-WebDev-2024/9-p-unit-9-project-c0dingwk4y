@@ -11,6 +11,10 @@ draw = function(){
   fill(60, 0, 255);
   triangle(200, 104, 280, 280, 120, 280);
   fill(255, 255, 255);
+  if(mouseClicked && shape==1){
+    textsize(random(30));
+    text("🌸", mouseX, mouseY);
+  }
   
   if (answer == 1) {
     text("YOUR", 176, 200);
